@@ -1,31 +1,32 @@
 # VPC Endpoint for Amazon S3
-The purpose here is to write code in terraform that will provision an infrastructure as shown in the diagram below. It is made up of:
-- A VPC that has one private and one public subnet
-  - Only the public instance has access to internet. This instance acts as a jump box to the private instance
-  - The private instance does not have access to internet. This instance connects to S3 via a VPC Endpoint
-- VPC Endpoint provides private access to S3. Traffic between private instance and S3:
-  - does not go through open internet
-  - does not leave Amazon network
+The purpose here is to write code in Terraform that will provision an Infrastructure as shown in the Diagram below. It is made up of:
+
+- A VPC that has one private and one public Subnet
+  - Only the public Instance has access to Internet. This Instance acts as a jump box to the private instance
+  - The private Instance does not have access to Internet. This Instance connects to S3 via a VPC Endpoint
+- VPC Endpoint provides private access to S3. Traffic between private Instance and S3:
+  - Does not go through open Internet
+  - Does not leave Amazon Network
 
 ![Infrastructure](./pics/PoC-Diagram-VPC.jpeg "Infrastructure")
 
-VPC Endpoint for S3 is a helpful feature that privately connects your VPC to S3. A private connection from your VPC to your AWS services is a much more secure way compared to giving internet access to your instances or using a NAT device.
+VPC Endpoint for S3 is a helpful feature that privately connects your VPC to S3. A private connection from your VPC to your AWS services is a much more secure way compared to giving Internet access to your Instances or using a NAT device.
 
 [VPC Endpoint for Amazon S3](https://aws.amazon.com/blogs/aws/new-vpc-endpoint-for-amazon-s3/) blog explains how to create an Endpoint via AWS Management Console
 
 
 # Prerequisites
 - Terraform v0.12.3 or higher
-- Create an RSA key (i.e. ~/.ssh/id_rsa) for granting access to servers that we will be provisioning in this repo. Use a third-party tool such as [ssh-keygen](https://www.ssh.com/ssh/keygen/) for this purpose
-- Ensure that AWS credentials are available at: "~/.aws/credentials" in the following format:
+- Create an RSA key (i.e. ~/.ssh/id_rsa) for granting access to servers that we will be provisioning in this repository. Use a third-party tool such as [ssh-keygen](https://www.ssh.com/ssh/keygen/) for this purpose
+- Ensure that AWS Credentials are available at: "~/.aws/credentials" in the following format:
 ```
       [default]
       aws_access_key_id = <KEY>
       aws_secret_access_key = <SECRET_KEY>
       region = <REGION>
 ```
-- Ensure that a unique S3 bucket as a backend type is created for saving terraform state file. See the docs [here](https://www.terraform.io/docs/backends/types/s3.html)
-- Edit values in main.tf as your need liike backend bucket name and region
+- Ensure that a unique S3 Bucket as a backend type is created for saving Terraform state file. See the docs [here](https://www.terraform.io/docs/backends/types/s3.html)
+- Edit values in main.tf as your need like backend Bucket name and Region
 ```
       terraform {
         # It is expected that the bucket, globally unique, already exists
@@ -56,12 +57,12 @@ VPC Endpoint for S3 is a helpful feature that privately connects your VPC to S3.
 - `terraform apply -auto-approve`
 
 # Test
-Once the command above has completed successfully, check aws management console in your selected region. Make a note of IPs public and private EC2 instances:
+Once the command above has completed successfully, check AWS Management Console in your selected Region. Make a note of IPs public and private EC2 Instances:
 - `ssh -A admin@<PRODUCER_PUBLIC_IP>` _(This is the bastion/jump server. You can not ssh to a server in private subnet. Also, ensure your key-pair key is added to ssh agent)_
-- `ssh -A admin@<PRODUCER_PRIVATE_IP>` _(This will allow you to ssh to the instance in private subnet that has a route to S3 via privatelink)_
+- `ssh -A admin@<PRODUCER_PRIVATE_IP>` _(This will allow you to ssh to the Instance in private Subnet that has a route to S3 via privateLink)_
 - `export TF_VAR_region=<REGION_SET_ABOVE>`
-- `aws s3 ls s3://privatelink-202907271837 --region ${TF_VAR_region}` _(The bucket should be empty. From the producer private instance you should be able to get, put, list and delete s3 objects)_
-- `touch file.txt` _(create a new blank file that is going to be uploaded to the bucket)_
+- `aws s3 ls s3://privatelink-202907271837 --region ${TF_VAR_region}` _(The Bucket should be empty. From the producer private Instance you should be able to get, put, list and delete s3 objects)_
+- `touch file.txt` _(create a new blank file that is going to be uploaded to the Bucket)_
 - `aws s3 cp file.txt s3://privatelink-202907271837/ --region ${TF_VAR_region}` _(This command uploads the file created above)_
 - `aws s3 ls s3://privatelink-202907271837 --region ${TF_VAR_region}` _(This command should list the file that was uploaded previously)_
 See this reference for common commands: https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html
