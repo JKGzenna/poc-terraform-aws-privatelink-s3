@@ -75,10 +75,10 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 - # Access from On-Premises Datacenters
 ![Infrastructure](./pics/Access-from-On-Premises.jpeg "Access from on-premises")
-#
+
 - # Access from abother VPC or Region
 ![Infrastructure](./pics/Access-from-abother-VPC-or-Region.jpeg "Access from abother VPC or region")
-#
+
 - # Use Gateway and Interface Endpoints together
 ![Infrastructure](./pics/Use-Gateway-and-Interface-Endpoints-together.jpeg "Access from abother VPC or region")
 
