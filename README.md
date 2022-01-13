@@ -66,14 +66,13 @@ Once the command above has completed successfully, check aws management console 
 - `aws s3 ls s3://privaelink-202907271837 --region ${TF_VAR_region}` _(This command should list the file that was uploaded previously)_
 See this reference for common commands: https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html
 
-
+#
 # Cleanup
 - `terraform destroy -force`
 #
 
 
 ## Diagrams for Connection with Corporate DataCenter throught Direct Connect and for other uses as Peering between differents VPCs or Regions
-#
 # Access from On-Premises Datacenters
 ![Infrastructure](./pics/Access-from-On-Premises.jpeg "Access from on-premises")
 #
