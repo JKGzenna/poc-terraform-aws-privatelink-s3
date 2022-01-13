@@ -40,7 +40,7 @@ VPC Endpoint for S3 is a helpful feature that privately connects your VPC to S3.
 ```
 
 # Clone repository and setup system variables
-- `git clone git@github.com:JKGzenna/poc-terraform-aws-privatelink-s3.git`
+- `git clone https://github.com/JKGzenna/poc-terraform-aws-privatelink-s3.git`
 - `cd terraform-aws-privateLink`
 - `eval $(ssh-agent)`
 - `ssh-add -k ~/.ssh/id_rsa` _(See adding an [identity key](https://www.ssh.com/ssh/add) for granting access to servers)_
@@ -75,10 +75,13 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 ## Access from on-premises
 ![Infrastructure](./pics/Access-from-On-Premises.jpeg "Access from on-premises")
+#
 ## Access from abother VPC or region
 ![Infrastructure](./pics/Access-from-abother-VPC-or-Region.jpeg "Access from abother VPC or region")
+#
 ## Use Gateway and Interface endpoints together
 ![Infrastructure](./pics/Use-Gateway-and-Interface-Endpoints-together.jpeg "Access from abother VPC or region")
+#
 
 
 
