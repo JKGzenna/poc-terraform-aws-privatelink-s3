@@ -69,10 +69,10 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 # Cleanup
 - `terraform destroy -force`
-#
 
 
 ## Diagrams for Connection with Corporate DataCenter throught Direct Connect and for other uses as Peering between differents VPCs or Regions
+
 - # Access from On-Premises Datacenters
 ![Infrastructure](./pics/Access-from-On-Premises.jpeg "Access from on-premises")
 #
@@ -81,7 +81,6 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 #
 - # Use Gateway and Interface Endpoints together
 ![Infrastructure](./pics/Use-Gateway-and-Interface-Endpoints-together.jpeg "Access from abother VPC or region")
-
 
 
 
