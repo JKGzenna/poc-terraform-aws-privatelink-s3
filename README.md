@@ -71,7 +71,8 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 - `terraform destroy -force`
 #
 
-## Diagrams for Connection with Corporate DataCenter throught Direct Connect and for other uses as Peering between differents VPCs or Regions
+
+## Other Considerations about PoC
 
 - For cost reasons and in order to make PoC completely accessible to anyone, only elements of the AWS free tier have been used for the creation of PrivateLink.
 
@@ -84,7 +85,7 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 - The PrivateLink has been doing until now as we have done it in the PoC with private Endpoints, and based on other components, since it did not exist as a single component, but since April 2021 AWS has this piece as such:
 
 - # New PrivateLink Component:
-![Infrastructure](./pics/New-PrivateLink-Component-Diagram.jpeg "New PrivateLink Component")
+![Infrastructure](./pics/New-PrivateLink-Component-Diagram.png "New PrivateLink Component")
 ![Infrastructure](./pics/New-PrivateLink-Component.jpeg "New PrivateLink Componentn Diagram")
 
 - The problem is its high cost, since the same can be achieved in the way that we have done in the PoC.
@@ -98,6 +99,9 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 - [AWS PrivateLink supports Amazon S3! What makes you happy?](https://hayao-k.dev/aws-privatelink-supports-amazon-s3-what-makes-you-happy)
 - [Implement AWS PrivateLink between AWS Storage Gateway and an Amazon S3 endpoint](https://noise.getoto.net/2021/10/05/connect-amazon-s3-file-gateway-using-aws-privatelink-for-amazon-s3/)
 
+
+
+## Diagrams for Connection with Corporate DataCenters throught Direct Connect and for other uses as Peering between differents VPCs or Regions
 
 - # Access from On-Premises Datacenters
 ![Infrastructure](./pics/Access-from-On-Premises.jpeg "Access from on-premises")
