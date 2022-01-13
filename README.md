@@ -53,7 +53,7 @@ The purpose here is to write code in Terraform that will provision an Infrastruc
 - `export TF_VAR_credentials=~/.aws/credentials`
 - `export TF_VAR_producer_s3_bucket_name=privatelink-202907271837` _(This must be globally unique bucket name)_
 
-# Instructions to build entire infrastructure
+# Instructions to build entire Infrastructure
 - `terraform init`
 - `terraform apply -auto-approve`
 
@@ -74,7 +74,7 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 #
 
 
-## Other Considerations on PoC
+## Other considerations on PoC
 
   - For cost reasons and in order to make PoC completely accessible to anyone, only elements of the AWS free tier have been used for the creation of PrivateLink.
 
@@ -86,7 +86,7 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
   - The PrivateLink has been doing until now as we have done it in the PoC with private Endpoints, and based on other components, since it did not exist as a single component, but since April 2021 AWS has this piece as such:
 
-- # New PrivateLink Component (it has an economic cost):
+- # New PrivateLink Component (it is not free):
 ![Infrastructure](./pics/New-PrivateLink-Component-Diagram.png "New PrivateLink Component")
 ![Infrastructure](./pics/New-PrivateLink-Component.jpeg "New PrivateLink Componentn Diagram")
 
