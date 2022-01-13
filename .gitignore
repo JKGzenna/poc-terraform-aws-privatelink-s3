@@ -9,3 +9,5 @@
 *.tfvars
 
 **/.vagrant/*
+
+*.DS_Store
