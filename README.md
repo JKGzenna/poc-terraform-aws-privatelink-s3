@@ -69,7 +69,7 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 # Cleanup
 - `terraform destroy -force`
-
+#
 
 ## Diagrams for Connection with Corporate DataCenter throught Direct Connect and for other uses as Peering between differents VPCs or Regions
 
