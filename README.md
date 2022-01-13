@@ -86,7 +86,7 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
   - The PrivateLink has been doing until now as we have done it in the PoC with private Endpoints, and based on other components, since it did not exist as a single component, but since April 2021 AWS has this piece as such:
 
-- # New PrivateLink Component (it has cost):
+- # New PrivateLink Component (it has an economic cost):
 ![Infrastructure](./pics/New-PrivateLink-Component-Diagram.png "New PrivateLink Component")
 ![Infrastructure](./pics/New-PrivateLink-Component.jpeg "New PrivateLink Componentn Diagram")
 
