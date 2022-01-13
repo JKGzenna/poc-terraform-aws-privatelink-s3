@@ -68,7 +68,7 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 #
 # Cleanup
-- `terraform destroy -force`
+`terraform destroy -force`
 #
 
 
