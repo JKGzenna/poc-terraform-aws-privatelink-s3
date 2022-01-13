@@ -117,7 +117,8 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 #
 
 
-- # On-Premises to S3 before AWS PrivateLink (not safe compared to privateLink, deprecated)
+- # On-Premises to S3 before AWS PrivateLink 
+  - ## Not safe compared to PrivateLink, Deprecated
 ![Infrastructure](./pics/On-Premises-to-S3-before-AWS-PrivateLink.png "On-Premises to S3 before AWS PrivateLink")
 
 
