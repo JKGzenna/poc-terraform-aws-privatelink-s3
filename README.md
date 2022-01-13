@@ -76,15 +76,15 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 ## Other Considerations about PoC
 
-- For cost reasons and in order to make PoC completely accessible to anyone, only elements of the AWS free tier have been used for the creation of PrivateLink.
+  - For cost reasons and in order to make PoC completely accessible to anyone, only elements of the AWS free tier have been used for the creation of PrivateLink.
 
-- The Direct Connect component has not been added either, since it generates high costs and we assume that if you already have a Cloud network set up with AWS at the business level, it is something that you will already have set up in your ecosystem to improve access latencies from the OnPremise DataCenters.
+  - The Direct Connect component has not been added either, since it generates high costs and we assume that if you already have a Cloud network set up with AWS at the business level, it is something that you will already have set up in your ecosystem to improve access latencies from the OnPremise DataCenters.
 
-- Therefore, in the PoC we do not assemble the DirectConnect component assuming that it is already assembled, for this reason we leave below the following Diagrams of the different use cases that could be given to the solution once it is already implemented in an AWS Business ecosystem
+  - Therefore, in the PoC we do not assemble the DirectConnect component assuming that it is already assembled, for this reason we leave below the following Diagrams of the different use cases that could be given to the solution once it is already implemented in an AWS Business ecosystem
 
-- We have also not used PrivateLink as a part as it has a high cost, but we have created it with components from the AWS Free Tier.
+  - We have also not used PrivateLink as a part as it has a high cost, but we have created it with components from the AWS Free Tier.
 
-- The PrivateLink has been doing until now as we have done it in the PoC with private Endpoints, and based on other components, since it did not exist as a single component, but since April 2021 AWS has this piece as such:
+  - The PrivateLink has been doing until now as we have done it in the PoC with private Endpoints, and based on other components, since it did not exist as a single component, but since April 2021 AWS has this piece as such:
 
 - # New PrivateLink Component:
 ![Infrastructure](./pics/New-PrivateLink-Component-Diagram.png "New PrivateLink Component")
