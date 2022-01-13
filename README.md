@@ -19,6 +19,7 @@ The purpose here is to write code in Terraform that will provision an Infrastruc
 # Prerequisites
 - Terraform v0.12.3 or higher
 - Create an RSA key (i.e. ~/.ssh/id_rsa) for granting access to servers that we will be provisioning in this repository. Use a third-party tool such as [ssh-keygen](https://www.ssh.com/ssh/keygen/) for this purpose
+- Make sure that in the Repository where we are going to have the Terraform code that supplies the infra, we have an ssh key added to avoid operating Terraform through https, since then it would need us to provide keys and it would stop the automatic process
 - Ensure that AWS Credentials are available at: "~/.aws/credentials" in the following format:
 ```
       [default]
@@ -113,7 +114,11 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 - # Use Gateway and Interface Endpoints together
 ![Infrastructure](./pics/Use-Gateway-and-Interface-Endpoints-together.jpeg "Access from abother VPC or region")
+#
 
+
+## On-Premises to S3 before AWS PrivateLink
+![Infrastructure](./pics/On-Premises-to-S3-before-AWS-PrivateLink.jpeg "On-Premises to S3 before AWS PrivateLink")
 
 
 # Resources
