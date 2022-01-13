@@ -50,7 +50,7 @@ The purpose here is to write code in Terraform that will provision an Infrastruc
 - `ssh-add -l` _(This command should show what keys have been added to the agent)_
 - `export TF_INPUT=0` _(See [Environment Variables link](https://www.terraform.io/docs/commands/environment-variables.html) on how to set system variables)_
 - `export TF_VAR_producer_public_key=$(ssh-keygen -y -f ~/.ssh/id_rsa)` _(This will be required unless producer_public_key in variables.tf is already set)_
-- `export TF_VAR_region=eu-west-2` _(This value is for london. You may choose your own [region](https://docs.aws.amazon.com/general/latest/gr/rande.html) instead)_
+- `export TF_VAR_region=eu-west-2` _(This value is for London. You may choose your own [region](https://docs.aws.amazon.com/general/latest/gr/rande.html) instead)_
 - `export TF_VAR_credentials=~/.aws/credentials`
 - `export TF_VAR_producer_s3_bucket_name=privatelink-202907271837` _(This must be globally unique bucket name)_
 
