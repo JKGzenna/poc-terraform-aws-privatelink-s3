@@ -98,7 +98,7 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 - [AWS PrivateLink for Amazon S3 is Now Generally Available](https://aws.amazon.com/jp/blogs/aws/aws-privatelink-for-amazon-s3-now-available/)
 - [AWS PrivateLink supports Amazon S3! What makes you happy?](https://hayao-k.dev/aws-privatelink-supports-amazon-s3-what-makes-you-happy)
 - [Implement AWS PrivateLink between AWS Storage Gateway and an Amazon S3 endpoint](https://noise.getoto.net/2021/10/05/connect-amazon-s3-file-gateway-using-aws-privatelink-for-amazon-s3/)
-
+#
 
 
 ## Diagrams for Connection with Corporate DataCenters throught Direct Connect and for other uses as Peering between differents VPCs or Regions
