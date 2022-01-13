@@ -10,7 +10,8 @@ The purpose here is to write code in Terraform that will provision an Infrastruc
 
 ![Infrastructure](./pics/PoC-Diagram-VPC.jpeg "Infrastructure")
 
-VPC Endpoint for S3 is a helpful feature that privately connects your VPC to S3. A private connection from your VPC to your AWS services is a much more secure way compared to giving Internet access to your Instances or using a NAT device.
+- VPC Endpoint for S3 is a helpful feature that privately connects your VPC to S3. 
+- A private connection from your VPC to your AWS services is a much more secure way compared to giving Internet access to your Instances or using a NAT device.
 
 [VPC Endpoint for Amazon S3](https://aws.amazon.com/blogs/aws/new-vpc-endpoint-for-amazon-s3/) blog explains how to create an Endpoint via AWS Management Console
 
