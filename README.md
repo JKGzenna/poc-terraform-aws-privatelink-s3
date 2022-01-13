@@ -71,15 +71,15 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 
 
-# Diagrams for Connection with Corporate DataCenter throught Direct Connect and for other uses as peering between differents VPCs or Regions
+## Diagrams for Connection with Corporate DataCenter throught Direct Connect and for other uses as peering between differents VPCs or Regions
 
-## Access from on-premises
+# Access from on-premises
 ![Infrastructure](./pics/Access-from-On-Premises.jpeg "Access from on-premises")
 #
-## Access from abother VPC or region
+# Access from abother VPC or region
 ![Infrastructure](./pics/Access-from-abother-VPC-or-Region.jpeg "Access from abother VPC or region")
 #
-## Use Gateway and Interface endpoints together
+# Use Gateway and Interface endpoints together
 ![Infrastructure](./pics/Use-Gateway-and-Interface-Endpoints-together.jpeg "Access from abother VPC or region")
 #
 
