@@ -86,6 +86,10 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 # Resources
 These resources have helped me learn about AWS PrivateLinks:
+- [AWS PrivateLink for Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html)
+- [AWS PrivateLink for Amazon S3 is Now Generally Available](https://aws.amazon.com/jp/blogs/aws/aws-privatelink-for-amazon-s3-now-available/)
+- [AWS PrivateLink supports Amazon S3! What makes you happy?](https://hayao-k.dev/aws-privatelink-supports-amazon-s3-what-makes-you-happy)
+- [Implement AWS PrivateLink between AWS Storage Gateway and an Amazon S3 endpoint](https://noise.getoto.net/2021/10/05/connect-amazon-s3-file-gateway-using-aws-privatelink-for-amazon-s3/)
 - [S3 encryption with KMS Managed Keys](https://www.youtube.com/watch?v=jZYkJf-9yXI)
 - [Import your Custom Key into KMS; Encrypt data with custom key](https://www.youtube.com/watch?v=VIWMezx8XiQ)
 - [AWS Key Management Service. Customer Master Key, Data Key, Envelope Encryption; KnowledgeIndia AWS Tutorials](https://www.youtube.com/watch?v=fmqzUCtC6Aw)
