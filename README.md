@@ -73,6 +73,32 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 ## Diagrams for Connection with Corporate DataCenter throught Direct Connect and for other uses as Peering between differents VPCs or Regions
 
+- For cost reasons and in order to make PoC completely accessible to anyone, only elements of the AWS free tier have been used for the creation of PrivateLink.
+
+- The Direct Connect component has not been added either, since it generates high costs and we assume that if you already have a Cloud network set up with AWS at the business level, it is something that you will already have set up in your ecosystem to improve access latencies from the OnPremise DataCenters.
+
+- Therefore, in the PoC we do not assemble the DirectConnect component assuming that it is already assembled, for this reason we leave below the following Diagrams of the different use cases that could be given to the solution once it is already implemented in an AWS Business ecosystem
+
+- We have also not used PrivateLink as a part as it has a high cost, but we have created it with components from the AWS Free Tier.
+
+- The PrivateLink has been doing until now as we have done it in the PoC with private Endpoints, and based on other components, since it did not exist as a single component, but since April 2021 AWS has this piece as such:
+
+- # New PrivateLink Component:
+![Infrastructure](./pics/New-PrivateLink-Component-Diagram.jpeg "New PrivateLink Component")
+![Infrastructure](./pics/New-PrivateLink-Component.jpeg "New PrivateLink Componentn Diagram")
+
+- The problem is its high cost, since the same can be achieved in the way that we have done in the PoC.
+
+- We leave 4 reading documents about this new piece that AWS proposes to make PrivateLink implementation easier, but remembering that it has a high cost and that the same can be achieved by doing it as we have done in this PoC
+
+- Documents on the new PrivateLink payment component for S3:
+
+- [AWS PrivateLink for Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html)
+- [AWS PrivateLink for Amazon S3 is Now Generally Available](https://aws.amazon.com/jp/blogs/aws/aws-privatelink-for-amazon-s3-now-available/)
+- [AWS PrivateLink supports Amazon S3! What makes you happy?](https://hayao-k.dev/aws-privatelink-supports-amazon-s3-what-makes-you-happy)
+- [Implement AWS PrivateLink between AWS Storage Gateway and an Amazon S3 endpoint](https://noise.getoto.net/2021/10/05/connect-amazon-s3-file-gateway-using-aws-privatelink-for-amazon-s3/)
+
+
 - # Access from On-Premises Datacenters
 ![Infrastructure](./pics/Access-from-On-Premises.jpeg "Access from on-premises")
 
@@ -85,11 +111,7 @@ See this reference for common commands: https://docs.aws.amazon.com/cli/latest/u
 
 
 # Resources
-These resources have helped me learn about AWS PrivateLinks:
-- [AWS PrivateLink for Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html)
-- [AWS PrivateLink for Amazon S3 is Now Generally Available](https://aws.amazon.com/jp/blogs/aws/aws-privatelink-for-amazon-s3-now-available/)
-- [AWS PrivateLink supports Amazon S3! What makes you happy?](https://hayao-k.dev/aws-privatelink-supports-amazon-s3-what-makes-you-happy)
-- [Implement AWS PrivateLink between AWS Storage Gateway and an Amazon S3 endpoint](https://noise.getoto.net/2021/10/05/connect-amazon-s3-file-gateway-using-aws-privatelink-for-amazon-s3/)
+### These resources have helped me learn about AWS PrivateLinks:
 - [S3 encryption with KMS Managed Keys](https://www.youtube.com/watch?v=jZYkJf-9yXI)
 - [Import your Custom Key into KMS; Encrypt data with custom key](https://www.youtube.com/watch?v=VIWMezx8XiQ)
 - [AWS Key Management Service. Customer Master Key, Data Key, Envelope Encryption; KnowledgeIndia AWS Tutorials](https://www.youtube.com/watch?v=fmqzUCtC6Aw)
@@ -97,3 +119,7 @@ These resources have helped me learn about AWS PrivateLinks:
 - [Gateway VPC Endpoints; includes a good diagram](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-gateway.html)
 - [Endpoints for Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html)
 - [IAM Policies and Bucket Policies and ACLs blog](https://aws.amazon.com/blogs/security/iam-policies-and-bucket-policies-and-acls-oh-my-controlling-access-to-s3-resources/)
+- [AWS PrivateLink for Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html)
+- [AWS PrivateLink for Amazon S3 is Now Generally Available](https://aws.amazon.com/jp/blogs/aws/aws-privatelink-for-amazon-s3-now-available/)
+- [AWS PrivateLink supports Amazon S3! What makes you happy?](https://hayao-k.dev/aws-privatelink-supports-amazon-s3-what-makes-you-happy)
+- [Implement AWS PrivateLink between AWS Storage Gateway and an Amazon S3 endpoint](https://noise.getoto.net/2021/10/05/connect-amazon-s3-file-gateway-using-aws-privatelink-for-amazon-s3/)
