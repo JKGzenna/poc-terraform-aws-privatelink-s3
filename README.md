@@ -49,7 +49,7 @@ VPC Endpoint for S3 is a helpful feature that privately connects your VPC to S3.
 - `export TF_VAR_producer_public_key=$(ssh-keygen -y -f ~/.ssh/id_rsa)` _(This will be required unless producer_public_key in variables.tf is already set)_
 - `export TF_VAR_region=eu-west-2` _(This value is for london. You may choose your own [region](https://docs.aws.amazon.com/general/latest/gr/rande.html) instead)_
 - `export TF_VAR_credentials=~/.aws/credentials`
-- `export TF_VAR_producer_s3_bucket_name=privaelink-202907271837` _(This must be globally unique bucket name)_
+- `export TF_VAR_producer_s3_bucket_name=privatelink-202907271837` _(This must be globally unique bucket name)_
 
 # Instructions to build entire infrastructure
 - `terraform init`
@@ -60,10 +60,10 @@ Once the command above has completed successfully, check aws management console 
 - `ssh -A admin@<PRODUCER_PUBLIC_IP>` _(This is the bastion/jump server. You can not ssh to a server in private subnet. Also, ensure your key-pair key is added to ssh agent)_
 - `ssh -A admin@<PRODUCER_PRIVATE_IP>` _(This will allow you to ssh to the instance in private subnet that has a route to S3 via privatelink)_
 - `export TF_VAR_region=<REGION_SET_ABOVE>`
-- `aws s3 ls s3://privaelink-202907271837 --region ${TF_VAR_region}` _(The bucket should be empty. From the producer private instance you should be able to get, put, list and delete s3 objects)_
+- `aws s3 ls s3://privatelink-202907271837 --region ${TF_VAR_region}` _(The bucket should be empty. From the producer private instance you should be able to get, put, list and delete s3 objects)_
 - `touch file.txt` _(create a new blank file that is going to be uploaded to the bucket)_
-- `aws s3 cp file.txt s3://privaelink-202907271837/ --region ${TF_VAR_region}` _(This command uploads the file created above)_
-- `aws s3 ls s3://privaelink-202907271837 --region ${TF_VAR_region}` _(This command should list the file that was uploaded previously)_
+- `aws s3 cp file.txt s3://privatelink-202907271837/ --region ${TF_VAR_region}` _(This command uploads the file created above)_
+- `aws s3 ls s3://privatelink-202907271837 --region ${TF_VAR_region}` _(This command should list the file that was uploaded previously)_
 See this reference for common commands: https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html
 
 

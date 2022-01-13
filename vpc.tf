@@ -10,6 +10,7 @@ module "producer_vpc" {
   # enable_nat_gateway               = true
   cidr                             = "10.0.0.0/25"
   azs                              = "${data.aws_availability_zones.all.names}"
+  #Multi AZ config
   # private_subnets                  = ["10.0.0.0/27", "10.0.0.32/27"]  # AZ a and b
   # public_subnets                   = ["10.0.0.64/27", "10.0.0.96/27"] # AZ a and b
   private_subnets                  = ["10.0.0.0/27"]  # AZ a

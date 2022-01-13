@@ -1,4 +1,4 @@
-# code for the creation of a VPC Endpoint and associating it with private route table
+# Code for the creation of a VPC Endpoint and associating it with private route table
 resource "aws_vpc_endpoint" "producer_endpoint_gateway_to_s3" {
   route_table_ids = "${module.producer_vpc.private_route_table_ids}"
   service_name    = "com.amazonaws.${data.aws_region.current.name}.s3"

@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "log_bucket" {
 #   restrict_public_buckets = true
 # }
 
-module "privaelink_s3_bucket" {
+module "privatelink_s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
   bucket        = "${var.producer_s3_bucket_name}"
@@ -48,12 +48,12 @@ module "privaelink_s3_bucket" {
 
   tags = {
     Terraform = "true"
-    Name = "privaelink-s3-bucket"
+    Name = "privatelink-s3-bucket"
   }
 }
 
 resource "aws_s3_bucket_policy" "producer_bucket_policy" {
-  bucket = "${module.privaelink_s3_bucket.id}"
+  bucket = "${module.privatelink_s3_bucket.id}"
 
   depends_on = [ "aws_s3_bucket_public_access_block.producer_bucket_public_block" ]
 
@@ -87,7 +87,7 @@ POLICY
 }
 
 resource "aws_s3_bucket_public_access_block" "producer_bucket_public_block" {
-  bucket = "${module.privaelink_s3_bucket.id}"
+  bucket = "${module.privatelink_s3_bucket.id}"
 
   block_public_acls       = true
   block_public_policy     = true
