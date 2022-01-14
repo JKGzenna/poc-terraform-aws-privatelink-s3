@@ -6,14 +6,14 @@ resource "aws_s3_bucket" "log_bucket" {
   acl = "log-delivery-write"
 }
 
-# resource "aws_s3_bucket_public_access_block" "log_bucket_bucket_public_block" {
-#   bucket = "${aws_s3_bucket.log_bucket.id}"
+#resource "aws_s3_bucket_public_access_block" "log_bucket_bucket_public_block" {
+#  bucket = "${aws_s3_bucket.log_bucket.id}"
 #
-#   block_public_acls       = true
-#   block_public_policy     = true
-#   ignore_public_acls      = true
-#   restrict_public_buckets = true
-# }
+#  block_public_acls       = true
+#  block_public_policy     = true
+#  ignore_public_acls      = true
+#  restrict_public_buckets = true
+#}
 
 module "privatelink_s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
