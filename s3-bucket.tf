@@ -55,7 +55,7 @@ module "privatelink_s3_bucket" {
 resource "aws_s3_bucket_policy" "producer_bucket_policy" {
   bucket = "${module.privatelink_s3_bucket.id}"
 
-  depends_on = [ "aws_s3_bucket_public_access_block.producer_bucket_public_block" ]
+  depends_on = [ aws_s3_bucket_public_access_block.producer_bucket_public_block ]
 
   policy = <<POLICY
 {

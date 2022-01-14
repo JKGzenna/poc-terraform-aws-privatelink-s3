@@ -52,7 +52,7 @@ The purpose here is to write code in Terraform that will provision an Infrastruc
 - `export TF_VAR_producer_public_key=$(ssh-keygen -y -f ~/.ssh/id_rsa)` _(This will be required unless producer_public_key in variables.tf is already set)_
 - `export TF_VAR_region=eu-west-2` _(This value is for London. You may choose your own [region](https://docs.aws.amazon.com/general/latest/gr/rande.html) instead)_
 - `export TF_VAR_credentials=~/.aws/credentials`
-- `export TF_VAR_producer_s3_bucket_name=privatelink-microsites-uk` _(This must be globally unique bucket name and the bucket must be already existing or created before launching the terraform init)_
+- `export TF_VAR_producer_s3_bucket_name=privatelink_s3_bucket` _(This must be globally unique bucket name and the bucket must be already existing or created before launching the terraform init)_
 
 # Instructions to build entire Infrastructure
 - `terraform init`
@@ -63,10 +63,10 @@ Once the command above has completed successfully, check AWS Management Console 
 - `ssh -A admin@<PRODUCER_PUBLIC_IP>` _(This is the bastion/jump server. You can not ssh to a server in private subnet. Also, ensure your key-pair key is added to ssh agent)_
 - `ssh -A admin@<PRODUCER_PRIVATE_IP>` _(This will allow you to ssh to the Instance in private Subnet that has a route to S3 via privateLink)_
 - `export TF_VAR_region=<REGION_SET_ABOVE>`
-- `aws s3 ls s3://privatelink-microsites-uk --region ${TF_VAR_region}` _(The Bucket should be empty. From the producer private Instance you should be able to get, put, list and delete s3 objects)_
+- `aws s3 ls s3://privatelink-s3-bucket --region ${TF_VAR_region}` _(The Bucket should be empty. From the producer private Instance you should be able to get, put, list and delete s3 objects)_
 - `touch file.txt` _(create a new blank file that is going to be uploaded to the Bucket)_
-- `aws s3 cp file.txt s3://privatelink-microsites-uk/ --region ${TF_VAR_region}` _(This command uploads the file created above)_
-- `aws s3 ls s3://privatelink-microsites-uk --region ${TF_VAR_region}` _(This command should list the file that was uploaded previously)_
+- `aws s3 cp file.txt s3://privatelink-s3-bucket/ --region ${TF_VAR_region}` _(This command uploads the file created above)_
+- `aws s3 ls s3://privatelink-s3-bucket --region ${TF_VAR_region}` _(This command should list the file that was uploaded previously)_
 See this reference for common commands: https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html
 
 
