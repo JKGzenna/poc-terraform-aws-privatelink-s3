@@ -1,3 +1,7 @@
+variable "region" {
+  description = "AWS region to launch resources in"
+}
+
 variable "credentials" {
   description = "Profiles containing aws_access_key_id and aws_secret_access_key"
 }
